@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Image Check</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_url">Enter first URL</string>
+    <string name="second_url">Enter second URL</string>
+    <string name="button_value">Enter</string>
+</resources>
