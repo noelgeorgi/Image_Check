@@ -13,7 +13,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -21,6 +23,9 @@ public class MainActivity extends Activity {
     ImageView img;
     Bitmap bitmap;
     ProgressDialog pDialog;
+    EditText edit;
+    TextView text;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +33,16 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         load_img = (Button)findViewById(R.id.enter);
         img = (ImageView)findViewById(R.id.img);
+        edit = (EditText)findViewById(R.id.url1);
+        text = (TextView)findViewById(R.id.urloutput);
         load_img.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
-                new LoadImage().execute("http://www.learn2crack.com/wp-content/uploads/2014/04/node-cover-720x340.png");
+                String name = edit.getText().toString();
+                text.append(name);
+                new LoadImage().execute(name);
             }
         });
 
@@ -63,6 +72,7 @@ public class MainActivity extends Activity {
             if(image != null){
                 img.setImageBitmap(image);
                 pDialog.dismiss();
+
 
             }else{
 
