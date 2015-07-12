@@ -35,22 +35,31 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="2dp" />
     <ImageView
-        android:layout_below="@+id/enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/img"
+        android:id="@+id/imagedisplay1"
         android:adjustViewBounds="false"
         android:baselineAlignBottom="false"
-        android:maxHeight="100dp"
-        android:maxWidth="100dp"
-        android:minHeight="100dp"
-        android:minWidth="100dp"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
         android:nestedScrollingEnabled="false"
-        android:layout_alignRight="@+id/enter"
-        android:layout_marginTop="33dp"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false" />
+        android:layout_below="@+id/enter"
+        android:layout_toStartOf="@+id/enter" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enter"
+        android:layout_gravity="center"
+        android:id="@+id/imagedisplay2"
+        android:adjustViewBounds="false"
+        android:baselineAlignBottom="false"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:nestedScrollingEnabled="false"
+        android:layout_alignTop="@+id/imagedisplay1"
+        android:layout_toRightOf="@+id/enter"
+        android:layout_toEndOf="@+id/enter" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,8 +68,8 @@
         android:id="@+id/urloutput"
         android:layout_marginBottom="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/img"
-        android:layout_alignEnd="@+id/img" />
+        android:layout_alignRight="@+id/imagedisplay2"
+        android:layout_alignEnd="@+id/imagedisplay2" />
 
 
 </RelativeLayout>
