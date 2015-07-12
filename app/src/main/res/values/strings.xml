@@ -4,5 +4,4 @@
     <string name="first_url">Enter first URL</string>
     <string name="second_url">Enter second URL</string>
     <string name="button_value">Enter</string>
-    <string name="percent_value">Percent Value = </string>
 </resources>

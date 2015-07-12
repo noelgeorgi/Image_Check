@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
     TextView text;
     int pixel1,pixel2,r1=0,g1=0,b1=0,r2=0,g2=0,b2=0;
     long diff=0;
-    final int s1=90000,s2=90000;
     String urlString1,urlString2;
 
 
@@ -55,6 +54,7 @@ public class MainActivity extends Activity {
                 bitmap[1]=null;
                 r1=0;g1=0;b1=0;r2=0;g2=0;b2=0;
                 diff=0;
+                text.setText("Similarity Percent = ");
                 new LoadImage().execute(urlString1,urlString2);
 
             }
@@ -98,23 +98,22 @@ public class MainActivity extends Activity {
                     {
                         pixel1 = bitmap[2].getPixel(x,y);
                         pixel2 = bitmap[3].getPixel(x,y);
-                        r1 += Color.red(pixel1);
-                        g1 += Color.green(pixel1);
-                        b1 += Color.blue(pixel1);
-                        r2 += Color.red(pixel2);
-                        g2 += Color.green(pixel2);
-                        b2 += Color.blue(pixel2);
+                        r1 = Color.red(pixel1);
+                        g1 = Color.green(pixel1);
+                        b1 = Color.blue(pixel1);
+                        r2 = Color.red(pixel2);
+                        g2 = Color.green(pixel2);
+                        b2 = Color.blue(pixel2);
                         diff += Math.abs(r1 - r2);
                         diff += Math.abs(g1 - g2);
                         diff += Math.abs(b1-b2);
 
                     }
                 }
-                double n = 90000*3;
-                double percent = 100 - diff*100/n/255.0;
-                String test=Double.toString(percent);
-                //text.addTextChangedListener();
-                text.append(test);
+                int n = 90000*3;
+                double percent = 100 - diff*100/n/255;
+                String prct=Integer.toString((int)percent);
+                text.setText("Similarity Percent  = " + prct);
                 pDialog.dismiss();}
 
 
